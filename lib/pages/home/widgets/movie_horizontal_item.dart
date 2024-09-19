@@ -15,7 +15,6 @@ class MovieHorizontalItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Redirecionar para a tela de detalhes
         Navigator.push(
           context,
           MaterialPageRoute(

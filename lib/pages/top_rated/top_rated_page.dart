@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/models/movie_model.dart';
+import 'package:movie_app/pages/details/details_page.dart';
 import 'package:movie_app/pages/top_rated/widgets/top_rated_movie.dart';
 import 'package:movie_app/services/api_services.dart';
 
@@ -26,33 +27,44 @@ class _TopRatedPageState extends State<TopRatedPage> {
       appBar: AppBar(
         title: const Text('Top Rated Movies'),
       ),
-      body: FutureBuilder(
-          future: moviesFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-            if (snapshot.hasError) {
-              return Center(
-                child: Text('Error: ${snapshot.error}'),
-              );
-            }
-            if (snapshot.hasData) {
-              final movies = snapshot.data!.movies;
-              return ListView.builder(
-                itemCount: movies.length,
-                itemBuilder: (context, index) {
-                  return TopRatedMovie(movie: movies[index]);
-                },
-              );
-            }
-
+      body: FutureBuilder<Result>(
+        future: moviesFuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: Text('No data found'),
+              child: CircularProgressIndicator(),
             );
-          }),
+          }
+          if (snapshot.hasError) {
+            return Center(
+              child: Text('Error: ${snapshot.error}'),
+            );
+          }
+          if (snapshot.hasData) {
+            final movies = snapshot.data!.movies;
+            return ListView.builder(
+              itemCount: movies.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MovieDetailsPage(id: movies[index].id),
+                      ),
+                    );
+                  },
+                  child: TopRatedMovie(movie: movies[index]),
+                );
+              },
+            );
+          }
+
+          return const Center(
+            child: Text('No data found'),
+          );
+        },
+      ),
     );
   }
 }

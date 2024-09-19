@@ -23,8 +23,6 @@ class _NowPlayingListState extends State<NowPlayingList> {
       children: [
         GestureDetector(
           onTap: () {
-            // Ação ao tocar no PageView, por exemplo, navegar para uma tela de detalhes.
-            print("PageView tapped!");
             final movie = widget.movies[currentPage];
             Navigator.push(
               context,

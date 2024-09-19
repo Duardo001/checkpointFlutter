@@ -20,7 +20,6 @@ class MoviesHorizontalList extends StatelessWidget {
 
           return GestureDetector(
             onTap: () {
-              // Navegação para a página de detalhes do filme
               Navigator.push(
                 context,
                 MaterialPageRoute(
