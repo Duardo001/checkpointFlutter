@@ -43,7 +43,7 @@ class MovieCast extends StatelessWidget {
                       children: [
                         castMember.profilePath.isNotEmpty
                             ? Image.network('https://image.tmdb.org/t/p/w500${castMember.profilePath}', height: 150, fit: BoxFit.cover)
-                            : Image.asset('assets/placeholder.jpg', height: 150), // Placeholder caso não tenha imagem
+                            : Image.asset('assets/placeholder.jpg', height: 150),
                         const SizedBox(height: 8),
                         Text(castMember.name, style: const TextStyle(fontWeight: FontWeight.bold)),
                         Text(castMember.character),

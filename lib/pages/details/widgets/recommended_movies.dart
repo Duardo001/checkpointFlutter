@@ -48,7 +48,7 @@ class RecommendedMovies extends StatelessWidget {
                     },
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 8.0),
-                      width: 120, // Ajuste a largura conforme necessário
+                      width: 120,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

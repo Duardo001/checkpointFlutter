@@ -79,12 +79,12 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
                     style: const TextStyle(fontSize: 16),
                   ),
                   const SizedBox(height: 10),
-                  MovieCast(id: movie.id), // Adicione aqui
+                  MovieCast(id: movie.id),
                   const SizedBox(height: 16),
                   RecommendedMovies(id: movie.id),
 
                   const SizedBox(height: 16),
-                  MovieReviews(id: movie.id), // Adicione aqui
+                  MovieReviews(id: movie.id), 
 
 
                 ],
