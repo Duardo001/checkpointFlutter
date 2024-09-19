@@ -30,11 +30,11 @@ class MovieCast extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 220, // Defina uma altura fixa para o carrossel
+              height: 220, 
               child: PageView.builder(
                 itemCount: snapshot.data!.length,
                 controller: PageController(
-                    viewportFraction: 0.8), // Controla a fração de exibição
+                    viewportFraction: 0.8), 
                 itemBuilder: (context, index) {
                   final castMember = snapshot.data![index];
                   return Card(

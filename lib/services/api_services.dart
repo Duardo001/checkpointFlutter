@@ -59,7 +59,6 @@ class ApiServices {
     final response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       final Map<String, dynamic> jsonResponse = jsonDecode(response.body);
-      print(jsonResponse); // Verifique a estrutura do JSON aqui
       return Movie.fromJson(jsonResponse);
     } else {
       throw Exception('failed to load movies details');

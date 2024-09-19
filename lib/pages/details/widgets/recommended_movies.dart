@@ -31,7 +31,7 @@ class RecommendedMovies extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 280, // Ajuste a altura conforme necessário
+              height: 280,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: snapshot.data!.length,
