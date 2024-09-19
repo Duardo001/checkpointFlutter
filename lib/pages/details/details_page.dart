@@ -38,7 +38,7 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
           } else if (snapshot.hasError) {
             return Center(child: Text('Erro: ${snapshot.error}'));
           } else if (!snapshot.hasData) {
-            return const Center(child: Text('Nenhum dado encontrado'));
+            return const Center(child: Text('No data found'));
           }
 
           final movie = snapshot.data!;
